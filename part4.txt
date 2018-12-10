@@ -1,0 +1,59 @@
+Write SQL queries (in as many steps as necessary) to solve each of the following:
+
+Find the author with the name 'Kara Melton' and then select all the articles she has written.
+Find Ontario in the provinces table and then find all the cities in that province.
+Who wrote the article called 'Coding Bootcamps and Emotional Labor'?
+Write a series of SQL queries to find out how many provinces are in Canada.
+How many people live at 4740 McDermott Street?
+What city is 4740 McDermott Street in?
+What province is 4740 McDermott Street in?
+What country is 4740 McDermott Street in?
+Find the person named 'Destini Davis' and then use a series of SQL queries to find what country they live in.
+How many articles has Aditya Mukerjee written?
+
+
+ANSWERS
+SELECT * FROM authors WHERE name='Kara Melton';
+SELECT title FROM articles WHERE author_id=8;
+
+SELECT * FROM provinces WHERE name='Ontario';
+ID = 14
+SELECT name FROM cities WHERE province_id=1
+
+SELECT author_id FROM articles WHERE title='Coding Bootcamps and Emotional Labor';
+id=4
+SELECT name FROM authors WHERE id=4;
+SELECT * FROM provinces;
+
+SELECT * FROM residences WHERE address='4740 McDermott Street';
+SELECT COUNT(*) FROM persons where residence_id=9;
+2
+
+SELECT city_id FROM residences WHERE address='4740 McDermott Street';
+ID = 11
+SELECT name FROM cities WHERE id=11;
+Ottawa
+
+SELECT province_id FROM cities WHERE id=11;
+ID=14
+SELECT name FROM provinces WHERE id=14;
+Ontario
+
+SELECT country_id FROM provinces WHERE id=14;
+id=1
+SELECT name FROM countries WHERE id=1;
+Canada
+SELECT residence_id FROM persons WHERE name='Destini Davis';
+id=2
+SELECT city_id FROM residences WHERE id=2;
+id=8
+SELECT province_id FROM cities WHERE id=8;
+id=14
+SELECT country_id FROM provinces WHERE id=14;
+id=1
+SELECT name FROM countries WHERE id=1;
+Canada
+
+SELECT id FROM authors WHERE name='Aditya Mukerjee';
+id=2
+SELECT COUNT(*) FROM articles WHERE author_id=2;
